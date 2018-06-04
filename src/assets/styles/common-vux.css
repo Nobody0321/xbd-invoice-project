@@ -1,0 +1,1161 @@
+@import 'common.css';
+
+/*------------------------内置定义------------------------*/
+/* 单位为px的可以定义在这个文件
+/* 单位为rem的定义在static目录
+/*------------------------内置定义------------------------*/
+
+
+
+
+/*------------------------通用------------------------*/
+
+body
+{
+    background-color: #f5f5f5;
+}
+
+
+
+.pull-center
+{
+    text-align: center;
+}
+.pull-left
+{
+    text-align: left;
+}
+.pull-right
+{
+    text-align: right;
+}
+.pull-middle
+{
+    vertical-align: middle;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.padding-5-25
+{
+    padding: 5px 25px;
+}
+.padding-5-20
+{
+    padding: 5px 20px;
+}
+.padding-10-15
+{
+    padding: 10px 15px;
+}
+.padding-5-15
+{
+    padding: 5px 15px;
+}
+.padding-10-5
+{
+    padding: 10px 5px;
+}
+.padding-5-10
+{
+    padding: 5px 10px;
+}
+.padding-0-10
+{
+    padding: 0 10px;
+}
+.padding-0-5
+{
+    padding: 0 5px;
+}
+.padding-bottom-100
+{
+    padding-bottom: 100px;
+    min-height: 200px;
+}
+.padding-15
+{
+    padding: 15px;
+}
+.padding-10
+{
+    padding: 10px;
+}
+.padding-5
+{
+    padding: 5px;
+}
+.padding-30-0
+{
+    padding: 30px 0;
+}
+.padding-15-0
+{
+    padding: 15px 0;
+}
+.padding-10-0
+{
+    padding: 10px 0;
+}
+.padding-5-0
+{
+    padding: 5px 0;
+}
+
+.margin-5
+{
+    margin: 5px;
+}
+.margin-5-0
+{
+    margin: 5px 0;
+}
+
+.margin-10-0
+{
+    margin: 10px 0;
+}
+
+
+.padding-bottom-2
+{
+    padding-bottom: 2px;
+}
+.padding-bottom-4
+{
+    padding-bottom: 4px;
+}
+.margin-bottom-2
+{
+    margin-bottom: 2px;
+}
+.margin-bottom-4
+{
+    margin-bottom: 4px;
+}
+.margin-bottom-8
+{
+    margin-bottom: 8px;
+}
+
+div.input-danger
+{
+    border: solid 1px #ff6666;
+    border-radius: 10px;
+}
+input.input-danger
+{
+    border: solid 1px #ff6666;
+}
+textarea.input-danger
+{
+    border: solid 1px #ff6666;
+}
+span.label-danger
+{
+    padding-left: 5px;
+    color: #B71C1C;
+}
+
+span.halftrans
+{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+span.halftrans-s
+{
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div.halftrans
+{
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.clearboth
+{
+    clear: both;
+    float: none;
+}
+
+
+/*按钮*/
+.w-radio
+{
+    display: none;
+}
+.w-radio-input
+{
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/btn-radio-off.png');
+    background-size: cover;
+    display: inline-block;
+    margin-top: -1px;
+    line-height: 1;
+}
+.w-radio:checked + .w-radio-input:after
+{
+    background-image: url('../images/btn-radio-on.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    content: "";
+    display: inline-block;
+}
+
+
+.w-check
+{
+    display: none;
+}
+.w-check-input
+{
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/btn-check-off.png');
+    background-size: cover;
+    display: inline-block;
+    margin-top: -1px;
+    line-height: 1;
+}
+.w-check:checked + .w-check-input:after
+{
+    background-image: url('../images/btn-check-on.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    content: "";
+    display: inline-block;
+}
+
+/*------------------------主题------------------------*/
+
+/*基础*/
+
+
+
+
+.xbd-panel
+{
+    position: relative;
+    padding: 0;
+    margin: 5px 0;
+    border-width: 0;
+    background-color: white;
+}
+.xbd-panel.marginless
+{
+    margin: 0;
+}
+.xbd-panel.borderless
+{
+    border-width: 0;
+}
+
+.xbd-panel-header
+{
+    padding: 0 15px;
+    clear: both;
+    /*border-bottom: 1px solid #dddddd;*/
+    border-bottom: 1px solid #f3f3f3;
+    height: 40px;
+    line-height: 40px;
+}
+.xbd-panel-content
+{
+    padding: 12px 10px;
+    float: none;
+    clear: both;
+}
+.xbd-panel-content.paddingless
+{
+    padding: 0;
+}
+.xbd-panel-header-main
+{
+    float: left;
+    width: 60%;
+    font-size: 18px;
+}
+.xbd-panel-header-link
+{
+    float: right;
+    font-size: 14px;
+    color: #999999;
+}
+.xbd-panel-header-main img
+{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+
+.xbd-inner-panel
+{
+    padding: 5px;
+    margin: 5px 0;
+    border: solid 1px #dddddd;
+    border-radius: 5px;
+    float: none;
+    clear: both;
+}
+.xbd-inner-panel .xbd-inner-panel-header
+{
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px 0;
+}
+.xbd-inner-panel .xbd-inner-panel-content
+{
+    font-size: 15px;
+}
+
+.xbd-ipc-item
+{
+    width: 100%;
+    display: inline-block;
+}
+
+.xbd-inner-panel-header span
+{
+    float: right;
+    padding: 0 10px;
+}
+
+
+.xbd-ipc-left
+{
+    width: 25%;
+    float: left;
+}
+.xbd-ipc-center
+{
+    width: 70%;
+    float: left;
+}
+.xbd-ipc-right
+{
+    width: 25%;
+    float: right;
+}
+
+.xbd-ipc-left img
+{
+    width: 60px;
+    height: 60px;
+}
+
+.xbd-ipc-desc
+{
+    color: #dddddd;
+    font-size: 14px;
+    padding-top: 2px;
+}
+
+.xbd-navbar
+{
+    font-size: 14px;
+    color: #666666;
+    background-color: #f5f5f5;
+}
+
+img.small-user-image
+{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.user-list-title
+{
+    padding: 10px 15px;
+    background-color: #eeeeee;
+}
+
+.docs-list-title
+{
+    height: 44px;
+    line-height: 44px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 18px;
+    background-color: #eeeeee;
+}
+
+.docs-list-summary
+{
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 18px;
+    background-color: white;
+    border-bottom: solid 1px #dddddd;
+    vertical-align: middle;
+}
+
+.docs-list-summary:last-child
+{
+    border-bottom: none;
+}
+
+.docs-list-summary img
+{
+    width: 18px;
+    height: 18px;
+}
+
+.docs-list-summary span
+{
+    padding-left: 15px;
+}
+
+
+.w-progress-box
+{
+    width: 100%;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.w-progress-bar
+{
+    height: 20px;
+    text-align: center;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    transition: width .6s ease;
+    background: #5cb85c linear-gradient(45deg, hsla(0, 0%, 100%, .15) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, .15) 0, hsla(0, 0%, 100%, .15) 75%, transparent 0, transparent);
+    background-size: 40px 40px;
+}
+.w-progress-bar.info
+{
+    background: #5bc0de linear-gradient(45deg, hsla(0, 0%, 100%, .15) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, .15) 0, hsla(0, 0%, 100%, .15) 75%, transparent 0, transparent);
+}
+.w-progress-bar p
+{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+    color: #947f7f;
+    padding: 5px 0;
+    font-weight: bold;
+}
+.w-progress-bar.text-left p
+{
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgba(45, 61, 70, 0.77);
+}
+
+
+div.xbd-bottom-tabbar
+{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.speed-dial
+{
+    position: fixed;
+    bottom: 65px;
+    right: 15px;
+}
+.speed-dial img
+{
+    display: block;
+    border-radius: 48px;
+    width: 48px;
+    /*border: solid 1px #f4f4f4;*/
+}
+
+.btn-xbd-normal
+{
+    color: #fff;
+    background-color: #3399ff;
+    border-color: #3399ff;
+}
+
+.btn-xbd-trans
+{
+    color: #3399ff;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #3399ff;
+}
+
+button.btn.btn-xbd-small
+{
+    width: auto;
+    margin: 1px 0;
+    height: auto;
+    font-size: 16px;
+}
+
+.popover-share-layer
+{
+    /*background-size: contain;*/
+    /*background-size: cover;*/
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.popover-share-layer img
+{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+
+div.toverflow
+{
+    width: 100%;
+    overflow: hidden;/*溢出隐藏*/
+    text-overflow: ellipsis;/*文本溢出省略号*/
+    white-space: nowrap;/*不换行*/
+    word-break: break-all;
+}
+
+span.label
+{
+    border-radius: 30%;
+}
+
+div.weui-cells
+{
+    line-height: 1;
+    font-size: 16px;
+}
+
+div.bottom-spacer
+{
+    margin-top: 5px;
+    height: 80px;
+    background-color: #f5f5f5;
+}
+
+div.map-tips
+{
+    /*background-color: rgba(65,65,65,0.2);*/
+    width: 100%;
+    padding: 8px;
+}
+
+a.weui-media-box
+{
+    padding: 5px;
+}
+
+button.btn
+{
+    width: 100%;
+    margin: 5px 0;
+    height: 44px;
+    font-size: 18px;
+}
+
+.xbd-bottom-tabbar
+{
+    background-color: #f9f9f9;
+}
+
+.xbd-bottom-tabbar .weui-tabbar__item
+{
+    color: #666666;
+}
+
+.xbd-bottom-tabbar .weui-tabbar__item .weui-tabbar__icon
+{
+    width: 32px;
+    height: 32px;
+}
+
+.xbd-bottom-tabbar .weui-tabbar__item .weui-tabbar__label
+{
+    font-size: 12px;
+}
+
+.xbd-bottom-tabbar .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label
+{
+    color: #3399ff;
+}
+
+.tab1, .tab2, .tab3
+{
+    background-color: #f5f5f5;
+}
+.tab1 p, .tab2 p, .tab3 p
+{
+    margin-bottom: 0;
+}
+.tab1 p label, .tab2 p label, .tab3 p label
+{
+    margin-bottom: 0;
+}
+.tab1 p label span, .tab2 p label span, .tab3 p label span
+{
+    font-weight: normal;
+}
+
+.tab1 .weui-cells, .tab2 .weui-cells, .tab3 .weui-cells
+{
+    margin-top: 0;
+}
+
+.tab1 .weui-cell, .tab2 .weui-cell
+{
+    /*padding-top: 8px;
+    padding-bottom: 8px;*/
+    height: 50px;
+    /*line-height: 40px;*/
+}
+
+.tab1 .weui-cell .vux-cell-bd
+{
+    padding-left: 15px;
+}
+
+.tab1 .weui-cells label, .tab2 .weui-cells label, .tab3 .weui-cells label
+{
+    font-weight: normal;
+    margin-top: 4px;
+    font-size: 18px;
+}
+
+.tab1 .weui-textarea, .tab2 .weui-textarea
+{
+    font-weight: normal;
+    padding-top: 5px;
+}
+
+.tab1 .vux-datetime.weui-cell.weui-cell_access p, .tab2 .vux-datetime.weui-cell.weui-cell_access p
+{
+    font-size: 18px;
+    color: black;
+}
+
+.tab1 .task-nodata
+{
+    padding-top: 30%;
+    background-color: #f5f5f5;
+}
+.tab1 .task-nodata img
+{
+    width: 150px;
+    height: 150px;
+}
+
+.tab2 .task-nodata
+{
+  padding: 100px;
+  background-color: #f5f5f5;
+}
+.tab2 .task-nodata img
+{
+    width: 200px;
+    height: 200px;
+}
+
+
+/*Tab1*/
+
+.tab1 .tab1_home .weui-cell, .tab1.tab1_school_profile .weui-cell
+{
+    /*padding-top: 8px;
+    padding-bottom: 8px;*/
+    height: 70px;
+    /*line-height: 40px;*/
+}
+
+.tab1 .home-header
+{
+    clear: both;
+    padding: 15px;
+    width: 100%;
+}
+.tab1 .home-progress
+{
+    clear: both;
+    padding: 15px;
+}
+
+.tab1 .home-header .home-header-logo
+{
+    float: left;
+    width: 60px;
+}
+.tab1 .home-header .home-header-setting
+{
+    /*float: right;*/
+    width: 20px;
+    top: 15px;
+    right: 20px;
+    position: absolute;
+}
+.tab1 .home-header .home-header-action
+{
+    /*float: right;*/
+    width: 60px;
+    top: 15px;
+    right: 20px;
+    position: absolute;
+}
+.tab1 .home-header .home-header-content
+{
+    /*float: right;*/
+    font-size: 14px;
+    text-align: left;
+    /*width: calc(100% - 100px);  !*calc(100% - 80px);  80%;*!*/
+}
+.tab1 .home-header .home-header-content .home-school-name span
+{
+    font-size: 20px;
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+}
+.tab1 .home-header .home-header-content .home-plan-title span
+{
+    color: #666666;
+    margin-left: 15px;
+}
+.tab1 .home-header .home-header-content .home-plan-title span.text-percent
+{
+    margin-left: 2px;
+    color: #999999;
+}
+.tab1 .home-header .home-header-logo img
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 9px;
+}
+.tab1 .home-header .home-header-setting img
+{
+    width: 20px;
+    height: 20px;
+}
+
+.tab1 .home-progress
+{
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.tab1 .home-progress .weui-progress__bar
+{
+    height: 12px;
+}
+
+.tab1 .home-progress .weui-progress__bar .weui-progress__inner-bar
+{
+    background-color: #3399ff;
+}
+
+
+.tab1 .school-menu
+{
+    min-height: 48px;
+    margin: 5px 0;
+    border-bottom: solid 1px #dddddd;
+}
+
+.tab1 .school-menu:last-child
+{
+    border-bottom: none;
+}
+
+.tab1 .task-list-item
+{
+    padding: 0;
+    margin-left: 8px;
+    border-bottom: solid 1px #f3f3f3;
+    /*border-bottom: solid 1px #dddddd;*/
+}
+
+.tab1 .task-list-item:last-child
+{
+    border-bottom: none;
+}
+
+.tab1 .task_flexbox, .tab2 .task_flexbox
+{
+    height: 50px;
+}
+
+.tab1 .task_flexbox .task_image img, .tab2 .task_flexbox .task_image img
+{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.tab1 .task_flexbox .task_name, .tab2 .task_flexbox .task_name
+{
+    font-size: 18px;
+    color: black;
+    overflow: hidden;/*溢出隐藏*/
+    text-overflow: ellipsis;/*文本溢出省略号*/
+    white-space: nowrap;/*不换行*/
+    word-break: break-all;
+}
+
+.tab1 .task_flexbox .task_date, .tab2 .task_flexbox .task_date
+{
+    font-size: 12px;
+    color: #999999;
+}
+
+.tab1 .task_flexbox .task_circle, .tab2 .task_flexbox .task_circle
+{
+    width: 44px;
+    height: 44px;
+    float: right;
+}
+
+.tab1 .tab1_home .task_flexbox
+{
+    padding: 10px 0;
+    height: 70px;
+}
+
+.tab1 .charts-title
+{
+    margin-bottom: 10px;
+}
+
+/*.tab1 .weui-cells label
+{
+    margin-top: 0;
+}*/
+
+.tab1 .weui-cell_access .weui-cell__ft:after
+{
+    top: 55%;
+    font-size: 12px;
+}
+
+.tab1 div.weui-cell.justify-region .weui-cell__ft
+{
+    text-align: left;
+}
+
+.tab1 .weui-switch:checked
+{
+    border-color: #3399ff;
+    background-color: #3399ff;
+}
+
+
+.tab1 table.table
+{
+    margin: 0;
+}
+.tab1 table.table caption
+{
+    color: #3399ff;
+    font-size: 18px;
+    padding-left: 18px;
+}
+.tab1 table.table td
+{
+    font-size: 17px;
+    padding-left: 15px;
+}
+.tab1 table.table td.gray
+{
+    color: #999999;
+}
+
+.tab1.tab1_school_profile .weui-cells label
+{
+    margin-top: 2px;
+}
+.tab1.tab1_school_manage .weui-cells label
+{
+    margin-top: 4px;
+}
+
+.tab1.tab1_school_manage .weui-cells label.vux-label
+{
+    padding-right: 15px;
+}
+
+.tab1.tab1_support .support-desc
+{
+    font-size: 17px;
+}
+
+
+/*Tab2*/
+
+.tab2 .header-tab
+{
+    padding: 5px;
+}
+
+.tab2 .xbd-logo-helper img
+{
+    width: 48px;
+    height: 48px;
+}
+
+.tab2 .search-table
+{
+    padding: 2px 5px;
+    border: solid 1px #f5f5f5;
+    margin-top: 2px;
+}
+.tab2 .search-table .search-button
+{
+    width: 60px;
+}
+
+.tab2 .map-float-tabbar
+{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.tab2 .map-float-tabbar img
+{
+    width: 40px;
+    height: 40px;
+}
+
+.tab2 .task_status
+{
+    text-align: center;
+    font-size: 16px;
+}
+
+.tab2 .task_status img
+{
+    width: 32px;
+}
+
+.tab2 .weui-cells__title
+{
+    padding: 0 15px;
+    font-size: 17px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #f5f5f5;
+}
+
+.tab2 .vux-tab .vux-tab-item
+{
+    font-size: 18px;
+}
+
+.tab2 .tab2_home .task_flexbox
+{
+    height: 70px;
+    padding: 10px 0 10px 5px;
+}
+
+.tab2 .task-nodata
+{
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.tab2 .task-nodata p
+{
+    padding-top: 60px;
+    color: #3399ff;
+    font-size: 22px;
+}
+
+.tab2
+{
+    background-color: #f5f5f5;
+}
+.yutang_home
+{
+    background-color: #f5f5f5;
+}
+.tab2 p
+{
+    margin-bottom: 0;
+}
+.tab2 p label
+{
+    margin-bottom: 0;
+}
+.tab2 p label span
+{
+    font-weight: normal;
+}
+
+.tab2 .weui-cells
+{
+    margin-top: 0;
+}
+
+.tab2 .weui-cell
+{
+    /*padding-top: 8px;
+    padding-bottom: 8px;*/
+    /*height: 50px;*/
+    /*line-height: 40px;*/
+}
+
+.tab2 .weui-cells label
+{
+    font-weight: normal;
+    margin-top: 4px;
+    font-size: 18px;
+}
+
+.tab2 .weui-cell_access .weui-cell__ft:after
+{
+    top: 55%;
+    font-size: 12px;
+}
+
+.tab2 div.weui-cell.justify-region .weui-cell__ft
+{
+    text-align: left;
+}
+
+.tab2 .task-nodata
+{
+    /*position: absolute;*/
+    /*top: 114px;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*overflow: hidden;*/
+    /*background-color: #f5f5f5;*/
+    padding: 15px;
+    background-color: #f5f5f5;
+}
+
+.tab2 .task-nodata img
+{
+    width: 200px;
+    height: 200px;
+}
+.tab2 .task-nodata p
+{
+    color: #999999;
+    font-size: 18px;
+}
+
+.tab2 .vux-tab {
+    background-color: #ffffff;
+    height: 55px;
+}
+.tab2 .vux-tab .vux-tab-item {
+    font-size: 18px;
+    line-height: 55px;
+}
+
+.tab2 .weui-progress__bar
+{
+    height: 20px;
+    background-color: #EBEBEB;
+}
+
+.tab2 .plan_progress .weui-progress__inner-bar {
+    background-color: #FFCC00;
+}
+
+.tab2 .plan_progress2 .weui-progress__inner-bar {
+    background-color: #3399ff;
+}
+
+.tab2 .weui-search-bar {
+    background-color: #f5f5f5;
+}
+.tab2 .weui-search-bar:before{
+    border-top-color: #f5f5f5;
+}
+.tab2 .weui-search-bar:after{
+    border-bottom-color: #f5f5f5;
+}
+.tab2 .weui-search-bar__cancel-btn {
+    color: #3399ff;
+}
+
+.addfish-content-wrapper.weui-cells, .addfishvisit-content-wrapper.weui-cells
+{
+    margin-top: 0;
+}
+.addfish-content-wrapper .weui-cells label, .addfishvisit-content-wrapper .weui-cells label
+{
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 4px;
+}
+.addfish-content-wrapper .weui-cell_access .weui-cell__ft:after, .addfishvisit-content-wrapper .weui-cell_access .weui-cell__ft:after
+{
+    top: 55%;
+    font-size: 12px;
+}
+.addfish-content-wrapper .weui-cell, .addfishvisit-content-wrapper .weui-cell
+{
+    height: 50px;
+}
+.addfish-content-wrapper .vux-x-textarea, .addfishvisit-content-wrapper .vux-x-textarea
+{
+    height: 130px;
+}
+.addfish-content-wrapper .vux-datetime p, .addfishvisit-content-wrapper .vux-datetime p
+{
+    font-weight: normal;
+    font-size: 18px;
+    padding-top: 8px;
+}
+.addfish-content-wrapper .weui-textarea, .addfishvisit-content-wrapper .weui-textarea, .keyword_dialog_wrapper .weui-textarea
+{
+    padding-top: 5px;
+}
+
+/*survey*/
+
+.survey .weui-progress__bar{
+    height: 25px;
+}
+
+.survey .weui-progress__inner-bar{
+    background-color : #00b3ee;
+}
+
+.survey .progress_div .weui-progress__inner-bar {
+    background-color: #3399ff;
+}
+
+/*---------------------------------------------------*/
+

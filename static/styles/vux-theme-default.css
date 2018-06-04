@@ -1,0 +1,75 @@
+/*------------------------基础------------------------*/
+
+html { font-size: 70px; }
+@media screen and (min-width: 320px) { html{font-size:85px;} } /* 5/5s 320*568 */
+@media screen and (min-width: 375px)  { html{font-size:100px;} } /* 6/6s 375*667 */
+@media screen and (min-width: 414px)  { html{font-size:115px;} } /* 6p/6sp 414*736 */
+@media screen and (min-width: 768px)  { html{font-size:140px;} } /* ipad 768*1024 */
+@media screen and (min-width: 1024px) { html{font-size:160px;} } /* ipad-pro 1024*1366 */
+
+/*
+@media screen and (min-width: 320px) {html{font-size:50px;}}
+@media screen and (min-width: 360px) {html{font-size:56.25px;}}
+@media screen and (min-width: 375px) {html{font-size:58.59375px;}}
+@media screen and (min-width: 400px) {html{font-size:62.5px;}}
+@media screen and (min-width: 414px) {html{font-size:64.6875px;}}
+@media screen and (min-width: 440px) {html{font-size:68.75px;}}
+@media screen and (min-width: 480px) {html{font-size:75px;}}
+@media screen and (min-width: 520px) {html{font-size:81.25px;}}
+@media screen and (min-width: 560px) {html{font-size:87.5px;}}
+@media screen and (min-width: 600px) {html{font-size:93.75px;}}
+@media screen and (min-width: 640px) {html{font-size:100px;}}
+@media screen and (min-width: 680px) {html{font-size:106.25px;}}
+@media screen and (min-width: 720px) {html{font-size:112.5px;}}
+@media screen and (min-width: 760px) {html{font-size:118.75px;}}
+@media screen and (min-width: 800px) {html{font-size:125px;}}
+@media screen and (min-width: 960px) {html{font-size:150px;}}
+*/
+
+/*
+html
+{
+    font-size: 62.5%;!*10 ÷ 16 × 100% = 62.5%*!
+}
+body
+{
+    font-size: 1.4rem;!*1.4 × 10px = 14px *!
+    background-color: #f5f5f5;
+}
+h1
+{
+    font-size: 2.4rem;!*2.4 × 10px = 24px*!
+}
+*/
+
+
+/*
+@media only screen and (min-width: 401px)
+{
+    html { font-size: 25px !important; }
+}
+@media only screen and (min-width: 428px)
+{
+    html { font-size: 26.75px !important; }
+}
+@media only screen and (min-width: 481px)
+{
+    html { font-size: 30px !important; }
+}
+@media only screen and (min-width: 569px)
+{
+    html { font-size: 35px !important; }
+}
+@media only screen and (min-width: 641px)
+{
+    html { font-size: 40px !important; }
+}
+*/
+
+/*------------------------/基础------------------------*/
+
+
+/*------------------------其他定义------------------------*/
+/* 单位为rem的可以定义在这个文件
+/*
+/*------------------------其他定义------------------------*/
