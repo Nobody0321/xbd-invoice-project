@@ -1,5 +1,5 @@
 <template>
-    <div class="card" :invoice="invoice" @click="clickInvoiceContent"  style="background-color:#D3D3D3;" v-if="(!invoice.bx)">
+    <div class="card" :invoice="invoice" @click="clickInvoiceContent" v-if="(!invoice.bx)">
         <div class="card-header">
             <span class="flag_invoice blue_bk" v-if="invoice.hyzt<=0">核验中</span>
             <span class="flag_invoice green_bk" v-if="((invoice.hyzt>0)&&(invoice.hyjl))">真</span>
@@ -19,30 +19,30 @@
         <div class="card-content" >
             <div class="card-content-inner"  >
                 <div>
-                    <span class="bz_invoice blue_bk" style="font-size:14px;">代码</span>
+                    <span class="bz_invoice2" style="font-size:14px;">代码</span>
                     <span style="font-size:17px;">{{ invoice.fpdm }}</span>
 
-                    <span class="bz_invoice blue_bk" style="font-size:14px;margin-left:20px">号码</span>
+                    <span class="bz_invoice2" style="font-size:14px;margin-left:20px">号码</span>
                     <span style="font-size:17px;">{{ invoice.fphm }}</span>
                 </div>
 
                 <div>
-                    <span class="bz_invoice green_bk"
+                    <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_cffp))">无重复票</span>
                     <span class="bz_invoice red_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span>
 
-                    <span class="bz_invoice green_bk"
+                    <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_jbxm))">无禁报项</span>
                     <span class="bz_invoice red_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_jbxm))">有禁报项</span>
 
-                    <span class="bz_invoice green_bk"
+                    <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_sfyc))">销方正常</span>
                     <span class="bz_invoice red_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_sfyc))">销方异常</span>
 
-                    <span class="bz_invoice green_bk"
+                    <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_gfyc))">购方正常</span>
                     <span class="bz_invoice red_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_gfyc))">购方异常</span>
@@ -61,12 +61,14 @@
             <span>开票日期:{{invoice.kprq}}</span>
             <span style="padding-left: 3px">金额:{{invoice.jshj}}</span>
 
-            <mt-badge type="primary" size="small" color="#26a2ff" style="padding:0px 2px">
-                {{(invoice.bx == true?"已报销":'未报销')}}
+            <mt-badge type="primary" size="small" color="#25c6fc" style="padding:0px 2px;font-weight:bold;">
+                未报销
             </mt-badge>
         </div>
     </div>
-    <div class="card" :invoice="invoice" @click="clickInvoiceContent"  v-else>
+
+
+    <div class="card" :invoice="invoice" @click="clickInvoiceContent"  style="background-color:#E8E8E8;"  v-else>
         <div class="card-header">
             <span class="flag_invoice blue_bk" v-if="invoice.hyzt<=0">核验中</span>
             <span class="flag_invoice green_bk" v-if="((invoice.hyzt>0)&&(invoice.hyjl))">真</span>
@@ -86,30 +88,30 @@
         <div class="card-content" >
             <div class="card-content-inner"  >
                 <div>
-                    <span class="bz_invoice green_bk" style="font-size:14px;">代码</span>
+                    <span class="bz_invoice2" style="font-size:14px;">代码</span>
                     <span style="font-size:17px;">{{ invoice.fpdm }}</span>
 
-                    <span class="bz_invoice green_bk" style="font-size:14px;margin-left:20px">号码</span>
+                    <span class="bz_invoice2 " style="font-size:14px;margin-left:20px">号码</span>
                     <span style="font-size:17px;">{{ invoice.fphm }}</span>
                 </div>
 
                 <div>
-                    <span class="bz_invoice green_bk"
+                    <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_cffp))">无重复票</span>
                     <span class="bz_invoice red_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span>
 
-                    <span class="bz_invoice green_bk"
+                    <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_jbxm))">无禁报项</span>
                     <span class="bz_invoice red_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_jbxm))">有禁报项</span>
 
-                    <span class="bz_invoice green_bk"
+                    <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_sfyc))">销方正常</span>
                     <span class="bz_invoice red_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_sfyc))">销方异常</span>
 
-                    <span class="bz_invoice green_bk"
+                    <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_gfyc))">购方正常</span>
                     <span class="bz_invoice red_bk"
                           v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_gfyc))">购方异常</span>
@@ -128,8 +130,8 @@
             <span>开票日期:{{invoice.kprq}}</span>
             <span style="padding-left: 3px">金额:{{invoice.jshj}}</span>
 
-            <mt-badge type="primary" size="small" color="#26a2ff" style="padding:0px 2px">
-                {{(invoice.bx == true?"已报销":'未报销')}}
+            <mt-badge type="primary" size="small" color="#E8E8E8" style="padding:0px 2px;font-weight:bold;color:#000000">
+                已报销
             </mt-badge>
         </div>
     </div>
@@ -213,7 +215,8 @@
 <style scoped lang="less">
 
     .blue_bk {
-        background-color: #26a2ff;
+        // background-color: #26a2ff;
+        background-color:#25c6fc;
     }
 
     .green_bk {
@@ -221,7 +224,8 @@
     }
 
     .red_bk {
-        background-color: #f44336;
+        // background-color: #f44336;
+        background-color:#ff534d;
     }
 
     .grey_bk {
@@ -244,6 +248,13 @@
         border-radius: 12px;
     }
 
+    .bz_invoice2 {
+        font-size: 14px;
+        padding: 0 4px 0 2px;
+        font-weight:bold;
+        border-radius: 12px;
+    }
+
     .fpmc {
         padding-left: 50px;
         font-size: 17px;
@@ -252,9 +263,10 @@
     .card {
         background: #fff;
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-        margin: 5px;
+        margin: 10px;
         position: relative;
-        border-radius: 2px;
+        border-radius: 8px;
+        border-style:outset;
         font-size: 17px;
     }
 

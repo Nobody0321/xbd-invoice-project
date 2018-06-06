@@ -36,7 +36,7 @@
                                 </div>
                 </div>
                 
-                <x-input title="部门" type="text"  placeholder="请输入部门名称" v-model="departmentname"  v-on:input="onDepartmentnameInput"
+                <x-input v-if="hasDepartment" title="部门" type="text"  placeholder="请输入部门名称" v-model="departmentname"  v-on:input="onDepartmentnameInput"
                          placeholder-align="left" text-align="left" class="input"  border-intent="false"></x-input>
                 
                 <div v-if="showDepartmentResult" class="popu_selector" >
@@ -99,6 +99,7 @@
                 contactname  : '',
                 contactphone : '',
                 schoolname : '',
+                hasDepartment:true,//标志位，用于
                 departmentname:'',
                 chooseSchoolId : 0,
                 //chooseDepartmentId:0,
@@ -179,7 +180,7 @@
                 vm.schoolname = schoolname;
                 vm.chooseSchoolId = schoolid;
 
-                vm.showCompanyResult = false;
+                vm.showCompanyResult = false;//是否显示候选
             },
 
             
@@ -189,11 +190,12 @@
                 let vm = this;
                 vm.departmentchoosed = departmentname;
                 vm.departmentname = departmentname;
+                vm.chooseDepartmentId = schoolid;
 
                 vm.showDepartmentResult = false;
             },
 
-            onCompanynameInput : function(){
+            onCompanynameInput : function(){//在输入公司名的时候同步进行候选检索
                 let vm = this;
                 console.log('[onInput -- schoolname]:' + vm.schoolname);
 
@@ -217,7 +219,7 @@
                     vm.departmentchoosed = '';
                     vm.departmentresults = [];
                     vm.showDepartmentResult = false;
-                }
+                }//如果检测到无效输入，不进行查询
                 else{
                     // vm.chooseDepartmentId = 0;
                     vm.getDepartmentNames(vm.departmentname);
@@ -225,11 +227,11 @@
 
             },
 
-            getCompanyNames : function(keyword) {//根据地址以及输入字段异步查询公司名
+            getCompanyNames : function(keyword) {//根据地址以及输入字段查询公司名
                 let vm = this;
 
                 var params = {
-                    qname : keyword,
+                    qname : keyword,//输入的部分公司名
                 }
 
                 if(vm.address.length > 1) {//如果选择的地址有效，根据地址以及输入的部分公司名查询
@@ -297,23 +299,23 @@
                 })
             },
 
-            apply_company : function() {
+            apply_company : function() {//信息填写完毕后，审核并提交到后台
                 let vm = this;
 
                 if(vm.contactname == null || vm.contactname == '')
                 {
-                    vm.showToast('请填写联系人信息!');
+                    vm.showToast('请完整填写信息!');
                     return;
                 }
 
                 if(vm.contactphone == null || vm.contactphone == '')
                 {
-                    vm.showToast('请填写联系电话！');
+                    vm.showToast('请完整填写信息！');
                     return;
                 }
 
                 if(!vm.schoolname || vm.schoolname == ''){
-                    vm.showToast('请填写公司名！');
+                    vm.showToast('请完整填写信息！');
                     return;
                 }
 
@@ -329,6 +331,7 @@
                     config: vm.chooseSchoolId,
                     contactname : vm.contactname,
                     contactphone : vm.contactphone,
+                    departmentname:vm.departmentname,
                 }
 
                 console.log(params);

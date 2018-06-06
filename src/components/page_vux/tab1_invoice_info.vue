@@ -51,7 +51,6 @@
        
             <mt-field label="描述" v-model="invoice.fpms"></mt-field>
             <mt-button text-align="center" @click.native="on_edit_fpms">修改描述</mt-button>
-            <!-- <p>{{invoice.fpms}}</p> -->
             <mt-cell title="机器编号" v-if="invoice.identification_number" :value="invoice.identification_number"></mt-cell>
             <mt-cell title="车辆类型" v-if="invoice.vehicle_type" :value="invoice.vehicle_type"></mt-cell>
             <mt-cell title="厂牌型号" v-if="invoice.factory_plate_model" :value="invoice.factory_plate_model"></mt-cell>
@@ -241,7 +240,7 @@
                             fpms:vm.invoice.fpms,
                             }
                 
-                var promise = httpresource.invoice_fpms_edit({}, { 'invoiceid' : vm.invoiceid,}, data);
+                var promise = httpresource.invoice_fpms_edit({}, {'invoiceid' : vm.invoiceid,}, data);
                 promise.then(
                     (res)=>{
                         console.log('[SUCCESS]' + JSON.stringify(res, null, 4));

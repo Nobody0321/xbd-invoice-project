@@ -128,7 +128,7 @@ const http_defines_build = {
     //查验发票
     invoice_check       : new _http_define('POST','/invoice/invoice/{invoiceid}/checkinvoice/', true),
     //修改发票备注
-    invoice_fpms_edit   : new _http_define('PUT','/invoice/invoice/{invoiceid}/', true),//(methodname, endpoint, needtoken)
+    invoice_fpms_edit   : new _http_define('PUT','/invoice/invoice/{invoiceid}/', true),
     //报销相关-------------------------------------------------------------------------
 
     //报销列表

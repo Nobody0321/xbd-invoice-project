@@ -21,7 +21,7 @@
                         <p>报销单</p>
                     </div>
 
-                    <group :gutter="0" title="报销用途">
+                    <group :gutter="0" title="报销用途*">
                         <x-input placeholder="请填写报销用途，如差旅费" v-model="apply_porpose" required></x-input>
                     </group>
 
