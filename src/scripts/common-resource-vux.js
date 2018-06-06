@@ -140,7 +140,7 @@ const http_defines_build = {
     //删除报销
     applyinvoice_delete      : new _http_define('DELETE','/invoice/applyinvoice/{applyinvoiceid}/', true),
     //更新报销
-    applyinvoice_update      : new _http_define('PUT','/invoice/applyinvoice/{applyinvoiceid}/', true),
+    applyinvoice_update      : new _http_define('PUT','/invoice/applyinvoice/{applyinvoiceid}/', true),//后台没有对应接口
 
     //-------------------------------------------------------------------------
 

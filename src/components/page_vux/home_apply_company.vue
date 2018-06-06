@@ -266,7 +266,7 @@
                 })
             },
 
-            getDepartmentNames : function(keyword) {//根据输入的公司名查询该公司部门
+            getDepartmentNames : function(keyword) {//根据输入的公司名 和 正在输入的部分部门名 查询该公司部门
                 let vm = this;
                 
                 let params = {};
@@ -275,6 +275,7 @@
                     if(keyword.length > 0) {
                         params = {
                                 qname : keyword,
+                                companyid: vm.chooseSchoolId,
                             }
                     }
                 }
