@@ -18,11 +18,11 @@
             <group :gouter="0" label-width="6em"  label-margin-right="1em" label-align="right" class="input_group">
                 <x-input class ='hide'></x-input>
                 <!-- xaddress夹在xinput中间，字体就会自动对齐... -->
-                <x-address :title="position" v-model="address" raw-value value-text-align="left" placeholder="请选择所在地"
-                           class="address" :list="addressList" border-intent="false" hide-district required></x-address>
+                <x-address title="所在地 <font color='#ff0000'>*</font>" v-model="address" raw-value value-text-align="left" placeholder="请选择所在地"
+                           class="address" :list="addressList" border-intent="false" hide-district ></x-address>
 
-                <x-input title="公司" type="text"  placeholder="请输入公司名称" v-model="schoolname"  v-on:input="onCompanynameInput"
-                         placeholder-align="left" text-align="left" class="input"  border-intent="false"  required></x-input>
+                <x-input title="公司 <font color='#ff0000'>*</font>" type="text"  placeholder="请输入公司名称" v-model="schoolname"  v-on:input="onCompanynameInput"
+                         placeholder-align="left" text-align="left" class="input"  border-intent="false"  ></x-input>
                
                 <div v-if="showCompanyResult" class="popu_selector" >
 
@@ -51,10 +51,10 @@
                                 </div>
                 </div>
 
-                <x-input type="text" title="联系人" placeholder="请输入联系人姓名" v-model="contactname" :max="20"
+                <x-input type="text" title="联系人 <font color='#ff0000'>*</font>" placeholder="请输入联系人姓名" v-model="contactname" :max="20"
                          class="input"  required></x-input>
 
-                <x-input type="tel" title="联系电话" placeholder="请输入联系人电话" v-model="contactphone"
+                <x-input type="tel" title="联系电话 <font color='#ff0000'>*</font>" placeholder="请输入联系人电话" v-model="contactphone"
                          class="input" :max="15" required></x-input>
 
             </group>
@@ -92,7 +92,6 @@
         //Part 1: props, data and computed;
         data : function (){
             return {
-                position : '所在地',
                 apply :'加 入',
                 addressList : ChinaAddressData,
                 address : [],
