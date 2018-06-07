@@ -101,7 +101,7 @@
                 hasDepartment:true,//标志位，用于
                 departmentname:'',
                 chooseSchoolId : 0,
-                //chooseDepartmentId:0,
+                chooseDepartmentId:0,
                 toastmessage_success : '申请成功， 请联系您的公司管理员审批！',
                 toastmessage : '' ,
                 toastStatus : false ,
@@ -183,13 +183,13 @@
             },
 
             
-            chooseDepartmentName : function(departmentname){
+            chooseDepartmentName : function(departmentname,departmentid){
                 console.log('chooseDepartmentName');
 
                 let vm = this;
                 vm.departmentchoosed = departmentname;
                 vm.departmentname = departmentname;
-                vm.chooseDepartmentId = schoolid;
+                vm.chooseDepartmentId = departmentid;
 
                 vm.showDepartmentResult = false;
             },
@@ -332,8 +332,9 @@
                     contactname : vm.contactname,
                     contactphone : vm.contactphone,
                     departmentname:vm.departmentname,
+                    departmentid:vm.chooseDepartmentId,
                 }
-
+                console.log("输入成功，开始提交");
                 console.log(params);
 
                 httpresource.apply_company({},{}, params).then(
@@ -375,7 +376,7 @@
                                 isassadmin  : ouser.isassadmin,
                                 appid       : ouser.appid,
                                 schoolname  : res.schoolname,
-
+                                departmentname : res.departmentname,
                                 //
                                 country     : ouser.country,
                                 province    : ouser.province,

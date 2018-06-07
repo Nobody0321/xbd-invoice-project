@@ -1,4 +1,4 @@
-<template>
+-<template>
 
     <div class="tab2 tab2_home">
 
@@ -361,4 +361,3 @@
         color: #ff6666;
     }
 </style>
-
