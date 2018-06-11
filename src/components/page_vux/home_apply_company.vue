@@ -98,7 +98,7 @@
                 contactname  : '',
                 contactphone : '',
                 schoolname : '',
-                hasDepartment:true,//标志位，用于
+                hasDepartment:false,//标志位，用于判断一个公司有没有部门
                 departmentname:'',
                 chooseSchoolId : 0,
                 chooseDepartmentId:0,
@@ -179,10 +179,10 @@
                 vm.schoolname = schoolname;
                 vm.chooseSchoolId = schoolid;
 
-                vm.showCompanyResult = false;//是否显示候选
+                vm.showCompanyResult = false;//收起候选框
+                vm.CompamyHasDepartment();
             },
 
-            
             chooseDepartmentName : function(departmentname,departmentid){
                 console.log('chooseDepartmentName');
 
@@ -266,9 +266,29 @@
                 })
             },
 
+            CompamyHasDepartment : function(){//根据公司id，查询该公司是否有部门
+                console.log("---------CompamyHasDepartment--------")
+                let params = {};
+                let vm = this;
+                params = {
+                            companyid: vm.chooseSchoolId,
+                            qname:''//后台接口要求有qname字段
+                        }
+                httpresource.department_list(params).then(
+                    (res) =>{
+                        console.log('[SUCCESS]' + JSON.stringify(res, null, 4));
+                        if(res.items.length > 0){
+                            vm.hasDepartment = true;
+                        }
+                    })
+                .catch((res) =>{
+                        console.log('[ERROR]' + JSON.stringify(res, null, 4));    
+                    })
+            },
+
             getDepartmentNames : function(keyword) {//根据输入的公司名 和 正在输入的部分部门名 查询该公司部门
                 let vm = this;
-                
+                 
                 let params = {};
                 if(vm.schoolname.length > 0) {//如果输入的公司名有效，根据输入的公司名查询
 
