@@ -240,7 +240,7 @@
                             fpms:vm.invoice.fpms,
                             }
                 
-                var promise = httpresource.invoice_fpms_edit({}, {'invoiceid' : vm.invoiceid,}, params);
+                var promise = httpresource.invoice_fpms_edit( params,{'invoiceid' : vm.invoiceid,});
                 promise.then(
                     (res)=>{
                         console.log('[SUCCESS]' + JSON.stringify(res, null, 4));
