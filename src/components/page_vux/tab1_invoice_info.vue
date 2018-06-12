@@ -232,15 +232,15 @@
             },
             
             _http_exec_edit_invoice_fpms: function(invoiceid){
-                var vm = this;
+                let vm = this;
                 
                 console.log('_http_exec_edit_invoice_fpms:', vm.invoice.fpms);
 
-                var data = {
+                var params = {
                             fpms:vm.invoice.fpms,
                             }
                 
-                var promise = httpresource.invoice_fpms_edit({}, {'invoiceid' : vm.invoiceid,}, data);
+                var promise = httpresource.invoice_fpms_edit({}, {'invoiceid' : vm.invoiceid,}, params);
                 promise.then(
                     (res)=>{
                         console.log('[SUCCESS]' + JSON.stringify(res, null, 4));
@@ -316,7 +316,7 @@
                                 vm.invoice.seller_bank_account = res.xfkhyh,                    //销方开户银行
 
                                 vm.invoice.check_code = res.jym,                                //校验码
-                                vm.invoice.fpms = res.fpms                                      //发票描述
+                                vm.invoice.fpms = res.fpms,                                     //发票描述
                                 vm.invoice.remark = res.bz,                                     //备注
                                 vm.invoice.identification_number = res.jqbh,                    //机器编号
 
