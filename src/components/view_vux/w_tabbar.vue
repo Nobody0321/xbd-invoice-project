@@ -159,25 +159,13 @@
                 }
             },
 
-            // get_all_fpdm:function(){//为了去重，需要获取所有发票信息进行比对，为了后期跳转方便，保留发票id信息
-            //     var invoice_infos = _http_exec_get_all_invoice_info()['results'];
-            //     var all_fpdm = [];
-            //     for (invoice_info of invoice_infos){
-            //         var tempinfo = [];
-            //         tempinfo['fpdm'] = invoice_info['fpdm'];
-            //         tempinfo['id'] = invoice_info['id'];
-            //         all_fpdm.push(tempinfo);
-            //     }
-            //     return all_fpdm;
-            // },
-
             _scan_invoice: function (ret, infos) {//对扫码获得的数据进行处理
                 console.log('onScanQRCode infos=');
                 console.log(infos);
 
                 let vm = this;
 
-                if (infos.length < 7)//长度对不上
+                if (infos.length < 7)//数据与预期不匹配
                 {
                     vm.toastmessage = '二维码数据错误' + ret;
                     vm.toastStatus = true;

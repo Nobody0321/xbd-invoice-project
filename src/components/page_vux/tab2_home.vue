@@ -187,11 +187,7 @@
                     {
                         vm.toastmessage = '二维码数据错误' + ret;
                         vm.toastStatus = true;
-                    }
-                    else if (vm.invoice_duplicate_check(infos[2]))
-                    {
-                        
-                    }
+                    }   
                     else{
                         vm.toastmessage = '数据处理中:' + ret;
                         vm.toastStatus = true;
@@ -245,6 +241,7 @@
                         fphm: vm.fphm,
                         kprq: vm.kprq,
                         jym_or_kjje: vm.je_or_jym,
+                        kjfp: 2,//开具的发票
                     };
 
                 console.log('_http_exec_check_invoice：body=');
@@ -287,7 +284,7 @@
                         //2、根据发票信息跳转
                         vm.goto_existinginvoice(info);
                     }
-                    vm.toastmessage = '新增发票失败  '+res['message'];
+                    vm.toastmessage = '扫描发票失败  '+ res['message'];
                     vm.toastStatus = true;
                 });
 
