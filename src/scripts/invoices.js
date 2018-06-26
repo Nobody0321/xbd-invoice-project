@@ -77,7 +77,7 @@ class Invoices {
     }
 
     get_fplx_from_fpdm(fpdm){
-        //如果是 // 04,10,11 输入校验码后6位。 01，02，03，99 输入金额
+        //如果是 // 04,10,11,12 输入校验码后6位。 01，02，03，99 输入金额
         let fplx = ["99","未知发票类型"]
         if (!fpdm) return fplx
         let b = fpdm.substring(7,8)
@@ -87,6 +87,10 @@ class Invoices {
                     fplx = ["10","增值税普通发票（电子）"]
                 if (fpdm[0] == '0' && (fpdm.substring(10,12) == '06' || fpdm.substring(10,12) == '07'))//: #判断是否为卷式发票  第1位为0且第11-12位为06或07
                     fplx = ["11","增值税普通发票（卷票)"]
+                if (fpdm[0] == '0' && fpdm.substring(10,12) == '12')
+                    fplx = ["14","增值税电子普通发票（通行费）"]
+                if (fpdm[0] == '0' && fpdm.substring(10,12) == '04')
+                    fplx = ["04","增值税普通发票"]
             }
             if (fplx[0]=="99"){//:   #如果还是99，且第8位是2，则是机动车发票
                 if (b=='2' && (fpdm[0] != '0'))
@@ -104,7 +108,7 @@ class Invoices {
         return fplx
     }
     /**
-     * 如果是 // 04,10,11 输入校验码后6位。 01，02，03，99 输入金额
+     * 如果是 // 04,10,11 , 12 输入校验码后6位。 01，02，03，99 输入金额
      * @param {*} fpdm
      */
     isInputJYM(fpdm){
