@@ -357,7 +357,7 @@
                 ).catch((res)=>{
                     console.log('[ERROR]' + JSON.stringify(res, null, 4));
 
-                    vm.toastmessage = '新增报销失败'+JSON.stringify(res, null, 4);
+                    vm.toastmessage = '新增报销失败:'+ res.message;
                     vm.toastStatus = true;
                 });
             },
