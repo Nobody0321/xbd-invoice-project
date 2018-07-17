@@ -101,7 +101,7 @@
                 hasDepartment:false,//标志位，用于判断一个公司有没有部门
                 departmentname:'',
                 chooseSchoolId : 0,
-                chooseDepartmentId:0,
+                chooseDepartmentId:null,
                 toastmessage_success : '申请成功， 请联系您的公司管理员审批！',
                 toastmessage : '' ,
                 toastStatus : false ,
@@ -345,14 +345,18 @@
                     return;
                 }
 
+                if( vm.chooseDepartmentId == 0)
+                {
+                    vm.chooseDepartmentId = null
+                }
+
                 let params = {
                     openid: vm.store_user.openid,
                     unionid: vm.store_user.unionid,
                     config: vm.chooseSchoolId,
                     contactname : vm.contactname,
                     contactphone : vm.contactphone,
-                    departmentname:vm.departmentname,
-                    departmentid:vm.chooseDepartmentId,
+                    department : vm.chooseDepartmentId,
                 }
                 console.log("输入成功，开始提交");
                 console.log(params);
@@ -396,7 +400,7 @@
                                 isassadmin  : ouser.isassadmin,
                                 appid       : ouser.appid,
                                 schoolname  : res.schoolname,
-                                departmentname : res.departmentname,
+                                department  : res.department,
                                 //
                                 country     : ouser.country,
                                 province    : ouser.province,
