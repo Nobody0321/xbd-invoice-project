@@ -69,7 +69,8 @@
 
 
     <div class="card" :invoice="invoice" @click="clickInvoiceContent"  style="background-color:#E8E8E8;"  v-else>
-        <div class="card-header">
+        
+        <div v-if="(!invoice.zfbz)" class="card-header">
             <span class="flag_invoice blue_bk" v-if="invoice.hyzt<=0">核验中</span>
             <span class="flag_invoice green_bk" v-if="((invoice.hyzt>0)&&(invoice.hyjl))">真</span>
             <span class="flag_invoice red_bk" v-if="((invoice.hyzt>0)&&(!invoice.hyjl))">失败</span>
@@ -85,6 +86,22 @@
             </div>
 
         </div>
+        <div v-else class="card-header">
+            <span class="flag_invoice green_bk" >作废</span>
+            <span class="fpmc">{{get_swjg_from_fpdm(invoice.fpdm)}}&nbsp;{{get_fplx_from_fpdm(invoice.fpdm)[1]}}</span>
+
+            <div v-if="invoice.selectenable">
+                <div v-if="true == invoice.selectflag">
+                    <img style="width: 20px;height: 20px" src="../../../static/images/btn-check-on.png">
+                </div>
+                <div v-else>
+                    <img style="width: 20px;height: 20px" src="../../../static/images/btn-check-off.png">
+                </div>
+            </div>
+
+        </div>
+
+
         <div class="card-content" >
             <div class="card-content-inner"  >
                 <div>
@@ -159,7 +176,7 @@
             get_fplx_from_fpdm: function (fpdm) {
                 return invoices.get_fplx_from_fpdm(fpdm);
             },
-            //用不到了
+            //由于界面改动，下面这个函数用不到了
             get_hwxx_from_invoice: function (hwxx) {
                 var hwxxstr = '';
                 if (hwxx && hwxx.length > 0) {

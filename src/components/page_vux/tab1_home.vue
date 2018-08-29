@@ -367,6 +367,7 @@
                                         kprq: tempinvoice.kprq,
                                         bx: tempinvoice.bx,
                                         hwxx: tempinvoice.hwxx,
+                                        zfbz: tempinvoice.zfbz,
                                         selectenable: false,
                                     });
                                 }
