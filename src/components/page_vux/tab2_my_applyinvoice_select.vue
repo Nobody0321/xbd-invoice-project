@@ -318,6 +318,10 @@
 
                 for (var i = 0; i < vm.invoicelist.length; i++) {
                     let tempinvoice = vm.invoicelist[i];
+                    if (tempinvoice.zfbz === true){
+                        vm.toastmessage = '提交报销失败，选中发票中有作废发票。';
+                        vm.toastStatus = true;
+                    }
                     if (tempinvoice && tempinvoice.id > 0 && true == tempinvoice.selectflag) {
                         tempstr = '';
                         tempstr = tempinvoice.id+'';
