@@ -1,6 +1,20 @@
 <template>
     <div class="card" :invoice="invoice" @click="clickInvoiceContent" v-if="(!invoice.bx)">
-        <div class="card-header">
+        <div  v-if="invoice.zfbz"  class="card-header">
+            <span class="flag_invoice green_bk" >作废</span>
+            <span class="fpmc">{{get_swjg_from_fpdm(invoice.fpdm)}}&nbsp;{{get_fplx_from_fpdm(invoice.fpdm)[1]}}</span>
+
+            <div v-if="invoice.selectenable">
+                <div v-if="true == invoice.selectflag">
+                    <img style="width: 20px;height: 20px" src="../../../static/images/btn-check-on.png">
+                </div>
+                <div v-else>
+                    <img style="width: 20px;height: 20px" src="../../../static/images/btn-check-off.png">
+                </div>
+            </div>
+
+        </div>
+        <div v-else class="card-header">
             <span class="flag_invoice blue_bk" v-if="invoice.hyzt<=0">核验中</span>
             <span class="flag_invoice green_bk" v-if="((invoice.hyzt>0)&&(invoice.hyjl))">真</span>
             <span class="flag_invoice red_bk" v-if="((invoice.hyzt>0)&&(!invoice.hyjl))">失败</span>
@@ -70,10 +84,8 @@
 
     <div class="card" :invoice="invoice" @click="clickInvoiceContent"  style="background-color:#E8E8E8;"  v-else>
         
-        <div v-if="(!invoice.zfbz)" class="card-header">
-            <span class="flag_invoice blue_bk" v-if="invoice.hyzt<=0">核验中</span>
-            <span class="flag_invoice green_bk" v-if="((invoice.hyzt>0)&&(invoice.hyjl))">真</span>
-            <span class="flag_invoice red_bk" v-if="((invoice.hyzt>0)&&(!invoice.hyjl))">失败</span>
+        <div  v-if="(invoice.zfbz==true)"  class="card-header">
+            <span class="flag_invoice green_bk" >作废</span>
             <span class="fpmc">{{get_swjg_from_fpdm(invoice.fpdm)}}&nbsp;{{get_fplx_from_fpdm(invoice.fpdm)[1]}}</span>
 
             <div v-if="invoice.selectenable">
@@ -86,8 +98,11 @@
             </div>
 
         </div>
+
         <div v-else class="card-header">
-            <span class="flag_invoice green_bk" >作废</span>
+            <span class="flag_invoice blue_bk" v-if="invoice.hyzt<=0">核验中</span>
+            <span class="flag_invoice green_bk" v-if="((invoice.hyzt>0)&&(invoice.hyjl))">真</span>
+            <span class="flag_invoice red_bk" v-if="((invoice.hyzt>0)&&(!invoice.hyjl))">失败</span>
             <span class="fpmc">{{get_swjg_from_fpdm(invoice.fpdm)}}&nbsp;{{get_fplx_from_fpdm(invoice.fpdm)[1]}}</span>
 
             <div v-if="invoice.selectenable">

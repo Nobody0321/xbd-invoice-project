@@ -71,6 +71,7 @@
             return {
                 http_exec_invoice_over: false,
 
+                //预定义toastmessage的属性
                 toastmessage: '',
                 toastPosition: 'middle',
                 toastStatus: false,
@@ -82,6 +83,7 @@
                 apply_invoice_num: 0,
                 apply_invoice_je: '0',
 
+                //存放从后台读取的发票信息
                 invoicelist: [],
 
                 count: 0,
@@ -131,7 +133,7 @@
 
         //Part 3: watch and methods;
         watch: {
-            apply_porpose: function (val) {
+            apply_porpose: function (val) {//是不是想拼propose?
                 this.isDisableApplyButton();
             },
             apply_invoice_num: function (val) {
@@ -167,24 +169,24 @@
                 else {
                     invoice.selectflag = !invoice.selectflag;
 
-                    var jine = 0;
+                    var value = 0;//把变量名jine改成value了
 
                     if (true == invoice.selectflag) {
                         vm.apply_invoice_num += 1;
 
-                        jine = parseFloat(vm.apply_invoice_je);
-                        jine += invoice.jshj;
+                        value = parseFloat(vm.apply_invoice_je);
+                        value += invoice.jshj;
 
-                        vm.apply_invoice_je = Number(jine).toFixed(2);
+                        vm.apply_invoice_je = Number(value).toFixed(2);
                     }
                     else {
                         if (vm.apply_invoice_num >= 1) {
                             vm.apply_invoice_num -= 1;
 
-                            jine = parseFloat(vm.apply_invoice_je);
-                            jine -= invoice.jshj;
+                            value = parseFloat(vm.apply_invoice_je);
+                            value -= invoice.jshj;
 
-                            vm.apply_invoice_je = Number(jine).toFixed(2);
+                            vm.apply_invoice_je = Number(value).toFixed(2);
                         }
                     }
                 }
@@ -204,7 +206,7 @@
                 let vm = this;
                 
                 if(false == vm.apply_disable) {
-                    vm._http_exec_post_applyinvoice();
+                    vm._http_exec_post_applyinvoice();//将报销单信息传到后台
                 }
                 else {
                     vm.toastmessage = '请先新增发票';
@@ -236,6 +238,7 @@
             },
 
             _http_exec_applyinvoice_list: function (offset, limit) {
+                //异步查询发票信息，每次查询五个，随着用户的下拉操作逐渐增加
 
                 console.log('---http exec invoice list---offset=' + offset + '---limit=' + limit);
 
@@ -276,6 +279,7 @@
                                         kprq: tempinvoice.kprq,
                                         bx: tempinvoice.bx,
                                         hwxx: tempinvoice.hwxx,
+                                        zfbz: tempinvoice.zfbz,
                                         selectenable: true,
                                         selectflag: false,
                                     });
@@ -284,13 +288,13 @@
                         }
 
                         if (vm.offset <= 0) {
-                            vm.invoicelist = tempinvoicelist;
+                            vm.invoicelist = tempinvoicelist;//若缓存中没有内容，覆盖写入
                         }
                         else {
-                            vm.invoicelist = vm.invoicelist.concat(tempinvoicelist);
+                            vm.invoicelist = vm.invoicelist.concat(tempinvoicelist);//否则，追加写入
                         }
 
-                        console.log(vm.invoicelist);
+                        console.log('vm.invoicelist:',vm.invoicelist);
 
                         vm.offset = vm.invoicelist.length;
                         vm.count = res.count;
@@ -306,7 +310,7 @@
                     });
             },
 
-            _http_exec_post_applyinvoice: function () {
+            _http_exec_post_applyinvoice: function () {//提交报销单
                 console.log('_http_exec_post_applyinvoice');
 
                 var vm = this;
@@ -317,12 +321,18 @@
                 var tempstr = '';
 
                 for (var i = 0; i < vm.invoicelist.length; i++) {
+
                     let tempinvoice = vm.invoicelist[i];
-                    if (tempinvoice.zfbz === true){
-                        vm.toastmessage = '提交报销失败，选中发票中有作废发票。';
-                        vm.toastStatus = true;
-                    }
-                    if (tempinvoice && tempinvoice.id > 0 && true == tempinvoice.selectflag) {
+
+                    if (tempinvoice && tempinvoice.id > 0 && tempinvoice.selectflag == true) {
+
+                        if(tempinvoice.zfbz == true)//判断选中的发票是不是作废
+                        {
+                            vm.toastmessage = '提交报销失败，选中发票中有作废发票。';
+                            vm.toastStatus = true;
+                            return;
+                        }
+
                         tempstr = '';
                         tempstr = tempinvoice.id+'';
                         if (tempinvoicesstr.length > 0) {
