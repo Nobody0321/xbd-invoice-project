@@ -102,7 +102,7 @@
                 departmentname:'',
                 chooseSchoolId : 0,
                 chooseDepartmentId:null,
-                toastmessage_success : '申请成功， 请联系您的公司管理员审批！',
+                toastmessage_success : '申请成功，请联系您的公司管理员审批！',
                 toastmessage : '' ,
                 toastStatus : false ,
                 showCompanyResult: false,
