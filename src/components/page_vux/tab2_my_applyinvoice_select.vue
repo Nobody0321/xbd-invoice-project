@@ -156,6 +156,9 @@
                 let vm = this;
 
                 if (clickflag == true){
+                    //这个页面中，点击发票跳转到发票详情页面 与 点击发票选择作为要报销 两个逻辑是互斥的
+                    //这里默认 clickflag 为 false（null），也无法通过其他操作修改，因此就不会触发下面的跳转功能
+                    //所以为什么不干脆删去
                     vm.prevclickinvoiceid = invoice.id;
 
                     if ((invoice.hyzt > 0) && (invoice.hyjl)) {
@@ -167,6 +170,8 @@
                     }
                 }
                 else {
+                    //前面绕过了点击进入详情页面的功能，这里点击为选择（取消选择）要报销的发票
+                    //selectflag默认为false，点击一下就选上了，再点击一下就取消选择了。
                     invoice.selectflag = !invoice.selectflag;
 
                     var value = 0;//把变量名jine改成value了
