@@ -1,7 +1,7 @@
 <template>
     <div class="card" :invoice="invoice" @click="clickInvoiceContent" v-if="(!invoice.bx)">
         <div  v-if="invoice.zfbz"  class="card-header">
-            <span class="flag_invoice green_bk" >作废</span>
+            <span class="flag_invoice red_bk" >作废</span>
             <span class="fpmc">{{get_swjg_from_fpdm(invoice.fpdm)}}&nbsp;{{get_fplx_from_fpdm(invoice.fpdm)[1]}}</span>
 
             <div v-if="invoice.selectenable">
