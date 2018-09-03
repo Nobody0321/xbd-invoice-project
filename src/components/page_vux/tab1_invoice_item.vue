@@ -16,8 +16,8 @@
         </div>
         <div v-else class="card-header">
             <span class="flag_invoice blue_bk" v-if="((invoice.hyzt<=0)&&(invoice.cysj==''))">核验中</span>
-            <span class="flag_invoice green_bk" v-if="((invoice.hyzt>0)&&(invoice.hyjl))">真</span>
-            <span class="flag_invoice red_bk" v-if="((invoice.hyzt>0)&&(!invoice.hyjl))">失败</span>
+            <span class="flag_invoice green_bk" v-if="((invoice.cysj)&&(invoice.hyjl))">真</span>
+            <span class="flag_invoice red_bk" v-if="((invoice.cysj)&&(!invoice.hyjl))">失败</span>
             <span class="fpmc">{{get_swjg_from_fpdm(invoice.fpdm)}}&nbsp;{{get_fplx_from_fpdm(invoice.fpdm)[1]}}</span>
 
             <div v-if="invoice.selectenable">
@@ -41,25 +41,26 @@
                 </div>
 
                 <div>
+                    <!-- 用查验时间来判断是不是第一次查验，重新查验后hyzt可能会出错 -->
                     <span class="bz_invoice blue_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_cffp))">无重复票</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(!invoice.bz_cffp))">无重复票</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span>
 
                     <span class="bz_invoice blue_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_jbxm))">无禁报项</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(!invoice.bz_jbxm))">无禁报项</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_jbxm))">有禁报项</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(invoice.bz_jbxm))">有禁报项</span>
 
                     <span class="bz_invoice blue_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_sfyc))">销方正常</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(!invoice.bz_sfyc))">销方正常</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_sfyc))">销方异常</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(invoice.bz_sfyc))">销方异常</span>
 
                     <span class="bz_invoice blue_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_gfyc))">购方正常</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(!invoice.bz_gfyc))">购方正常</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_gfyc))">购方异常</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(invoice.bz_gfyc))">购方异常</span>
                 </div>
             </div>
       
@@ -129,24 +130,24 @@
 
                 <div>
                     <span class="bz_invoice blue_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_cffp))">无重复票</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(!invoice.bz_cffp))">无重复票</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span>
 
                     <span class="bz_invoice blue_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_jbxm))">无禁报项</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(!invoice.bz_jbxm))">无禁报项</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_jbxm))">有禁报项</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(invoice.bz_jbxm))">有禁报项</span>
 
                     <span class="bz_invoice blue_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_sfyc))">销方正常</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(!invoice.bz_sfyc))">销方正常</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_sfyc))">销方异常</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(invoice.bz_sfyc))">销方异常</span>
 
                     <span class="bz_invoice blue_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(!invoice.bz_gfyc))">购方正常</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(!invoice.bz_gfyc))">购方正常</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyzt>0)&&(invoice.hyjl)&&(invoice.bz_gfyc))">购方异常</span>
+                          v-if="((invoice.cysj)&&(invoice.hyjl)&&(invoice.bz_gfyc))">购方异常</span>
                 </div>
             </div>
       
