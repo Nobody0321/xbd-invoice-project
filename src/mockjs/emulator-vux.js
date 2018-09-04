@@ -173,6 +173,7 @@ var invoice_list = {
             "bz_sfyc|0-1": 1,
             "bz_gfyc|0-1": 1,
             "kprq": "2016-07-01",
+            "cysj": "2016-07-01",
             "sysusername|1-2":"ab",
             "bx|1-2": true,
             "zfbz|1": true, 

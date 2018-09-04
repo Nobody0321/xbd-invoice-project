@@ -245,8 +245,10 @@
 
                 vm.prevclickinvoiceid = invoice.id;
 
-                if ((invoice.hyzt > 0) && (invoice.hyjl)) {
+                // if ((invoice.cysj!=null) && (invoice.hyjl)) {
+                    if (invoice.hyjl) {
                     //在这里跳转
+                    //有查验结论=True就够了，有一些旧票无cysj
                     vm.$router.push('/tab1/invoice_info/' + this.prevclickinvoiceid + '?type=1');
 
                     vm.prevclickinvoiceid = -1;
@@ -369,6 +371,7 @@
                                         hwxx: tempinvoice.hwxx,
                                         zfbz: tempinvoice.zfbz,
                                         selectenable: false,
+                                        cysj:tempinvoice.cysj,
                                     });
                                 }
                             }
