@@ -75,7 +75,7 @@
             hintMessage : function(){
                 var vm = this;
                 return '您已经申请了加入 "' +  vm.companyname  + '" 。<br/>' +
-                    '公司管理员还没有审批/设置权限，请联系此公司管理员在：' +
+                    '公司管理员还没有审核/设置权限，请联系此公司管理员在：' +
                     '<strong>"后台系统"</strong> 中设置您的权限。<br/><br/>您也可以点击下面的按钮取消申请。';
             }
         },
@@ -124,7 +124,7 @@
 
                 vm.$vux.confirm.show({
                     title: '取消申请',
-                    content: '公司管理员还没有审批/设置权限，取消申请后，您需要重新申请，确定取消吗？',
+                    content: '公司管理员还没有审核/设置权限，取消申请后，您需要重新申请，确定取消吗？',
                     onShow () {
                         console.log('plugin show')
                     },

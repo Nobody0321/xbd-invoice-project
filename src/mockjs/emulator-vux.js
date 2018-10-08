@@ -321,9 +321,9 @@ var applyinvoice_list = {
             "invoices_num|0-10": 0,                         //发票张数
             "invoices_je|0-1000": 0,                     //发票总金额
             "porpose": "泡妞",                         //报销用途
-            "approval_status|0-3": 0,                 //审批状态
-            "approval_time": "1970-01-01T00:00:00",    //审批时间
-            "approval_opinion": "",                    //审批意见
+            "approval_status|0-3": 0,                 //审核状态
+            "approval_time": "1970-01-01T00:00:00",    //审核时间
+            "approval_opinion": "",                    //审核意见
             "remark": "砍砍砍",                         //备注
             "createtime": "2017-11-08T17:43:01.178439",//创建时间
             "updatetime": "2017-11-08T17:43:01.178471",//更新时间

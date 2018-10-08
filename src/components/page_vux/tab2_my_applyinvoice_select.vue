@@ -249,7 +249,7 @@
 
                 let vm = this;
 
-                // # -1 验证失败或假票 0 未验证 1 真票未报销 2 真票已报销未审批通过 3 真票已审批通过[1包含2的发票]
+                // # -1 验证失败或假票 0 未验证 1 真票未报销 2 真票已报销未审核通过 3 真票已审核通过[1包含2的发票]
                 var params = {'invoicetype':1, 'kjfp':1, 'offset': offset, 'limit': limit};
 
                 console.log(params);

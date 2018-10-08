@@ -56,10 +56,10 @@
                 <div>
                     <!-- 用查验时间来判断是不是第一次查验，重新查验后hyzt可能会出错 -->
                     <!-- 查验时间有的早期票不存在，直接用hyjl -->
-                    <span class="bz_invoice blue_bk"
+                    <!-- <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyjl)&&(!invoice.bz_cffp))">无重复票</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span>
+                          v-if="((invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span> -->
 
                     <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyjl)&&(!invoice.bz_jbxm))">无禁报项</span>
@@ -154,10 +154,10 @@
                 </div>
 
                 <div>
-                    <span class="bz_invoice blue_bk"
+                    <!-- <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyjl)&&(!invoice.bz_cffp))">无重复票</span>
                     <span class="bz_invoice red_bk"
-                          v-if="((invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span>
+                          v-if="((invoice.hyjl)&&(invoice.bz_cffp))">重复发票</span> -->
 
                     <span class="bz_invoice blue_bk"
                           v-if="((invoice.hyjl)&&(!invoice.bz_jbxm))">无禁报项</span>

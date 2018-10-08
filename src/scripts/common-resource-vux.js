@@ -32,9 +32,9 @@ const http_defines_mock = {
     //获取部门列表  
     department_list     : new _http_define('GET','/local_zsw/local_department/local_simple/', false),
 
-    //获取审批状态
+    //获取审核状态
     approval_user_status       : new _http_define('GET','/l_zsw/l_zswapply/l_applyinfo',false),
-    //获取审批状态
+    //获取审核状态
     approval_company_status    : new _http_define('GET','/l_zsw/l_zswschoolapply/l_applyinfo',false),
     //取消申请 加入财税云发票
     withdraw_apply_invoice     : new _http_define('POST','/l_zsw/l_zswapply/l_cancelapply/',false),
@@ -99,9 +99,9 @@ const http_defines_build = {
     //获取部门列表  
     department_list     : new _http_define('GET','/wechatserver/api/department/simple/', true),
 
-    //获取审批状态
+    //获取审核状态
     approval_user_status       : new _http_define('GET','/wechatserver/api/applyinfo/',true),
-    //获取审批状态
+    //获取审核状态
     approval_company_status    : new _http_define('GET','/wechatserver/api/schoolapplyinfo/',true),
     //取消申请 加入财税云发票
     withdraw_apply_invoice     : new _http_define('POST','/wechatserver/api/cancelapply/',true),

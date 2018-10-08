@@ -164,7 +164,7 @@
                         return "未通过";
                         break;
                     case 0:
-                        return "审批中";
+                        return "审核中";
                         break;
                     case 1:
                         return "已报销";

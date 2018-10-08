@@ -123,7 +123,7 @@
 
                 vm.$vux.confirm.show({
                     title: '取消申请',
-                    content: '审批还未通过，取消申请后，您需要重新申请，确定取消吗？',
+                    content: '审核还未通过，取消申请后，您需要重新申请，确定取消吗？',
                     onShow () {
                         console.log('plugin show')
                     },

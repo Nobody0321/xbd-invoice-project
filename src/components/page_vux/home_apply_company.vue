@@ -102,7 +102,7 @@
                 departmentname:'',
                 chooseSchoolId : 0,
                 chooseDepartmentId:null,
-                toastmessage_success : '申请成功，请联系您的公司管理员审批！',
+                toastmessage_success : '申请成功，请联系您的公司管理员审核！',
                 toastmessage : '' ,
                 toastStatus : false ,
                 showCompanyResult: false,
@@ -366,7 +366,7 @@
                         console.log('[SUCCESS]' + JSON.stringify(res, null, 4));
                         vm.showToast(vm.toastmessage_success);
 
-                        // res.status  审批状态: 1.等待审核  2.审核通过  3. 审核未通过  4.用户已取消
+                        // res.status  审核状态: 1.等待审核  2.审核通过  3. 审核未通过  4.用户已取消
                         // user.status 授权状态: 0.未申请  1.已通过  2.申请加入易幼微等待审核 3.申请加入学校等待审核
                         if(res && res.status) {
                             //修改 status;

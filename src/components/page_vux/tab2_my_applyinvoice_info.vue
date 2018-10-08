@@ -46,7 +46,7 @@
                         </li>
                         <li v-if="applyinvoiceitem.approval_opinion && applyinvoiceitem.approval_opinion.length > 0">
                             <div class="div-detail">
-                                审批回复:   {{applyinvoiceitem.approval_opinion}}
+                                审核回复:   {{applyinvoiceitem.approval_opinion}}
                             </div>
                         </li>
                     </ul>
