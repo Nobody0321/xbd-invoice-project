@@ -89,7 +89,7 @@ class Invoices {
                     fplx = ["11","增值税普通发票（卷票)"]
                 if (fpdm[0] == '0' && fpdm.substring(10,12) == '12')
                     fplx = ["14","增值税电子普通发票（通行费）"]
-                if (fpdm[0] == '0' && fpdm.substring(10,12) == '04')
+                if (fpdm[0] == '0' && (fpdm.substring(10,12) == '04' || fpdm.substring(10,12) == '05'))
                     fplx = ["04","增值税普通发票"]
             }
             if (fplx[0]=="99"){//:   #如果还是99，且第8位是2，则是机动车发票

@@ -250,7 +250,8 @@
                 let vm = this;
 
                 // # -1 验证失败或假票 0 未验证 1 真票未报销 2 真票已报销未审核通过 3 真票已审核通过[1包含2的发票]
-                var params = {'invoicetype':1, 'kjfp':1, 'offset': offset, 'limit': limit};
+                //增加合规性检测5个字段过滤
+                var params = {'invoicetype':1, 'kjfp':1, 'offset': offset, 'limit': limit,by_bc:'0,0,0,0,0'};
 
                 console.log(params);
 
@@ -333,11 +334,16 @@
 
                         if(tempinvoice.zfbz == true)//判断选中的发票是不是作废
                         {
-                            vm.toastmessage = '提交报销失败，选中发票中有作废发票。';
+                            vm.toastmessage = '提交报销失败，选中发票中有作废发票，请重新选择！';
                             vm.toastStatus = true;
                             return;
                         }
-
+                        if(tempinvoice.bz_gfyc == true)//判断选中的发票是不是购销方异常
+                        {
+                            vm.toastmessage = '提交报销失败，存在购销方异常的发票，请重新选择！';
+                            vm.toastStatus = true;
+                            return;
+                        }
                         tempstr = '';
                         tempstr = tempinvoice.id+'';
                         if (tempinvoicesstr.length > 0) {
